@@ -68,3 +68,27 @@ MySQL
 
 MySQL is an open-source relational database management system. In this project, MySQL is used to store the migrated channel data from MongoDB Atlas. It offers a structured and efficient way to store and query data, ensuring data integrity and scalability.
 
+
+Features:
+
+YouTube Data Fetching:
+
+         Utilizes YouTube's Data API v3 to fetch channel details, video details, and comments.
+MongoDB Atlas Integration: 
+
+        Stores the fetched data in MongoDB Atlas for reliable and scalable data storage.
+MySQL Migration: 
+
+          Allows users to migrate channel data from MongoDB Atlas to their local MySQL database.
+Data Analysis with Pandas: 
+
+     Performs custom queries and provides basic analysis of the fetched data using Pandas.
+Interactive User Interface: 
+
+            Offers a user-friendly interface using Streamlit for easy data selection and display.
+Visualization Capabilities: 
+
+              Enables users to generate visualizations such as Animated Bubble Plot, Word Cloud, Donut Chart, Bar Chart, and Histogram.
+
+These features collectively allow users to fetch, store, analyze, and visualize YouTube data, providing insights and facilitating better understanding of channel information
+
