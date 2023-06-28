@@ -1,12 +1,5 @@
 Following package are used in this application
 
-import pandas as pd
-import plotly.express as px
-import streamlit as st
-from streamlit_option_menu import option_menu
-import mysql.connector as sql
-import pymongo
-
 PANDAS:
 
 Pandas is an open-source library that is made mainly for working with relational or labeled data both easily and intuitively. It provides various data structures 
@@ -17,3 +10,15 @@ PLOTLY:
 
 The plotly Python library is an interactive, open-source plotting library that supports over 40 unique chart types covering a wide range of statistical, financial, geographic,
 scientific, and 3-dimensional use-cases.
+Streamlit
+
+Streamlit is a Python library used for building interactive web applications. In this project, Streamlit is utilized to create a user-friendly interface for users to interact with the fetched YouTube data, select channels, playlists, and visualize data using various charts and plots.
+
+MySQL Connector
+
+mysql.connector is a Python library used to connect and interact with MySQL databases. In this project, mysql.connector is used to establish a connection to the local MySQL database and execute SQL queries to migrate the channel data from MongoDB Atlas.
+
+Google API Client
+
+googleapiclient is a Python library that enables interaction with various Google APIs. In this project, googleapiclient is used to make requests to YouTube's Data API v3 and fetch the required data, such as channel details, video details, and comments. It provides a convenient interface to access YouTube's vast collection of data programmatically.
+
