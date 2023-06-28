@@ -13,7 +13,7 @@ st.set_page_config(page_title= "Youtube Data Harvesting and Warehousing ",
                    page_icon= icon,
                    layout= "wide",
                    initial_sidebar_state= "expanded",
-                   menu_items={'About': """# This app is created by *Gayathri Ravi!*"""})
+                   menu_items={'About': """# This app is created by *GAYATHRI RAVI!*"""})
 
 # CREATING OPTION MENU
 with st.sidebar:
@@ -28,19 +28,19 @@ with st.sidebar:
                                    "nav-link-selected": {"background-color": "#C80101"}})
 
 # Bridging a connection with MongoDB Atlas and Creating a new database(youtube_data)
-client = pymongo.MongoClient("your unique client id")
+client = pymongo.MongoClient("mongodb://127.0.0.1:27017/")
 db = client.youtube_data
 
 # CONNECTING WITH MYSQL DATABASE
-mydb = sql.connect(host="your host",
-                   user="your user name",
-                   password="your password",
+mydb = sql.connect(host="localhost",
+                   user="root",
+                   password="gaya1972#$2000",
                    database= "youtube_db"
                   )
 mycursor = mydb.cursor(buffered=True)
 
 # BUILDING CONNECTION WITH YOUTUBE API
-api_key = "Enter your Key"
+api_key = "AIzaSyBuEn12mrl7oD-23xuRA09mM-8lLe-xo30"
 youtube = build('youtube','v3',developerKey=api_key)
 
 
@@ -49,6 +49,7 @@ def get_channel_details(channel_id):
     ch_data = []
     response = youtube.channels().list(part = 'snippet,contentDetails,statistics',
                                      id= channel_id).execute()
+    
 
     for i in range(len(response['items'])):
         data = dict(Channel_id = channel_id[i],
@@ -156,7 +157,7 @@ def channel_names():
 # HOME PAGE
 if selected == "Home":
     # Title Image
-    st.image("title.png")
+    st.image("C:/Users/LENOVO/OneDrive/Desktop/title.png")
     col1,col2 = st.columns(2,gap= 'medium')
     col1.markdown("## :blue[Domain] : Social Media")
     col1.markdown("## :blue[Technologies used] : Python,MongoDB, Youtube Data API, MySql, Streamlit")
@@ -164,7 +165,7 @@ if selected == "Home":
     col2.markdown("#   ")
     col2.markdown("#   ")
     col2.markdown("#   ")
-    col2.image("ytapi.png")
+    col2.image("C:/Users/LENOVO/OneDrive/Desktop/ytapi.png")
     
     
 # EXTRACT AND TRANSFORM PAGE
@@ -175,8 +176,9 @@ if selected == "Extract & Transform":
     with tab1:
         st.markdown("#    ")
         st.write("### Enter YouTube Channel_ID below :")
+        
         ch_id = st.text_input("Hint : Goto channel's home page > Right click > View page source > Find channel_id").split(',')
-
+        
         if ch_id and st.button("Extract Data"):
             ch_details = get_channel_details(ch_id)
             st.write(f'#### Extracted data from :green["{ch_details[0]["Channel_name"]}"] channel')
@@ -394,5 +396,5 @@ if selected == "View":
                     )
         st.plotly_chart(fig,use_container_width=True)
         
-
-
+        
+    
