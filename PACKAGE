@@ -1,2 +1,19 @@
 Following package are used in this application
 
+import pandas as pd
+import plotly.express as px
+import streamlit as st
+from streamlit_option_menu import option_menu
+import mysql.connector as sql
+import pymongo
+
+PANDAS:
+
+Pandas is an open-source library that is made mainly for working with relational or labeled data both easily and intuitively. It provides various data structures 
+and operations for manipulating numerical data and time series. This library is built on top of the NumPy library. Pandas is fast and it has high performance & 
+productivity for users
+
+PLOTLY:
+
+The plotly Python library is an interactive, open-source plotting library that supports over 40 unique chart types covering a wide range of statistical, financial, geographic,
+scientific, and 3-dimensional use-cases.
